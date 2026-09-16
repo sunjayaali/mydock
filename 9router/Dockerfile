@@ -1,0 +1,2 @@
+ARG N9ROUTER_VERSION=latest
+FROM decolua/9router:${N9ROUTER_VERSION}
