@@ -1,0 +1,15 @@
+services:
+  9router:
+    build:
+      context: ./9router
+      args:
+        - N9ROUTER_VERSION=${N9ROUTER_VERSION}
+    volumes:
+      - ${DATA_PATH_HOST}/9router:/app/data
+    ports:
+      - "${N9ROUTER_PORT}:20128"
+    environment:
+      - INITIAL_PASSWORD=${INITIAL_PASSWORD}
+      - NODE_ENV=production
+    networks:
+      - backend
