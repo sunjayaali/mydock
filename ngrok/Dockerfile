@@ -1,0 +1,2 @@
+ARG NGROK_VERSION=latest
+FROM ngrok/ngrok:${NGROK_VERSION}

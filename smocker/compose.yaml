@@ -1,0 +1,11 @@
+services:
+  smocker:
+    build:
+      context: ./smocker
+      args:
+        - SMOCKER_VERSION=${SMOCKER_VERSION}
+    ports:
+      - "${SMOCKER_HOST_PORT}:8080"
+      - "${SMOCKER_UI_PORT}:8081"
+    networks:
+      - backend

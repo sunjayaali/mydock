@@ -1,0 +1,15 @@
+services:
+  ngrok:
+    build:
+      context: ./ngrok
+      args:
+        - NGROK_VERSION=${NGROK_VERSION}
+    command: http ${NGROK_UPSTREAM} --url ${NGROK_URL}
+    ports:
+      - "${NGROK_HOST_PORT}:4040"
+    environment:
+      - NGROK_AUTHTOKEN=${NGROK_AUTHTOKEN}
+      - NGROK_URL=${NGROK_URL}
+      - NGROK_UPSTREAM=${NGROK_UPSTREAM}
+    networks:
+      - backend

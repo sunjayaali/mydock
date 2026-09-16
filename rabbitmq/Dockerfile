@@ -1,3 +1,2 @@
-FROM rabbitmq:3-management-alpine
-
-EXPOSE 5672 15672
+ARG RABBITMQ_VERSION=4-management-alpine
+FROM rabbitmq:${RABBITMQ_VERSION}
