@@ -1,0 +1,18 @@
+services:
+  hermes:
+    build:
+      context: ./hermes
+      args:
+        - HERMES_VERSION=${HERMES_VERSION}
+    command: gateway run
+    volumes:
+      - ${DATA_PATH_HOST}/hermes:/opt/data
+    ports:
+      - "${HERMES_GATEWAY_PORT}:8642"
+      - "${HERMES_DASHBOARD_PORT}:9119"
+    environment:
+      - HERMES_DASHBOARD=1
+      - HERMES_DASHBOARD_BASIC_AUTH_USERNAME=${HERMES_DASHBOARD_BASIC_AUTH_USERNAME}
+      - HERMES_DASHBOARD_BASIC_AUTH_PASSWORD=${HERMES_DASHBOARD_BASIC_AUTH_PASSWORD}
+    networks:
+      - backend
