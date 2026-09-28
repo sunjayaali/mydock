@@ -14,4 +14,3 @@
 To start all services, run:
 
     docker compose up -d
-  

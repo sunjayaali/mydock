@@ -11,5 +11,8 @@ services:
     environment:
       - INITIAL_PASSWORD=${INITIAL_PASSWORD}
       - NODE_ENV=production
+      - HEADROOM_URL=http://headroom:8787
+    depends_on:
+      - headroom
     networks:
       - backend

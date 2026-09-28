@@ -1,0 +1,8 @@
+services:
+  headroom:
+    build:
+      context: ./headroom
+      args:
+        - HEADROOM_VERSION=${HEADROOM_VERSION}
+    networks:
+      - backend

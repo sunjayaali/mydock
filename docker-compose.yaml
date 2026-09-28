@@ -15,6 +15,9 @@ include:
   - path: ngrok/compose.yaml
     project_directory: .
     env_file: ngrok/defaults.env
+  - path: headroom/compose.yaml
+    project_directory: .
+    env_file: headroom/defaults.env
   - path: 9router/compose.yaml
     project_directory: .
     env_file: 9router/defaults.env
